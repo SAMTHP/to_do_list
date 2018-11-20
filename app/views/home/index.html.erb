@@ -1,0 +1,31 @@
+<h1 class="text-center mb-4">Welcome to my todolist app</h1>
+<%= render 'layouts/task_form'  %>
+<div class="container">
+
+  <% @categories.each do  |category|%>
+  <button id="titleCategory" >
+  <%= category.title  %>
+  </button>
+  <div class="card" >
+    <ul id="card">
+      <% category.tasks.each do |task|  %>
+          <li>
+            <%= task.title  %>
+            <% unless task.deadline.nil? %>
+              , to read: <%= task.deadline.strftime('%D')  %>
+            <% end %>
+          </li>
+        <% end %>
+    </ul>
+    </div>
+  <% end %>
+
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3>Carroussel de folie !!</h3>
+    <img src="https://robohash.org/quamillumet.png?size=300x300&set=set1" id="mainImage" alt="Looking out the reality" class="articleImage"" >
+  </div>
+</div>
+<button>test</button>
